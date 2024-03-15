@@ -10,121 +10,125 @@
 </head>
 
 
-    <body>
-        <h1>Just a little more...</h1>
-        <div class="time-blocks">
-            <div class="block"><span class="side-text">DAYS</span><span class="time-text" id = "days"></span></div>
-            <div class="block"><span class="side-text">HOURS</span><span class="time-text" id = "hours"></span></div>
-            <div class="block"><span class="side-text">MINUTES</span><span class="time-text" id = "minutes"></span></div>
-            <div class="block"><span class="side-text">SECONDS</span><span class="time-text" id = "seconds"></span></div>
-        </div>
-    
-        <footer>
-          <center style="margin-top: 220px;"> Made with ❤️ by   <a style="text-decoration: none; color: #DDE6ED ; font-family: oswald;  font-weight: bold;" href=" https://wa.me/+918555024135" target="_blank">Pranay Kumar</a> </center>
-        </footer>
-    
-        <style media="screen">
-            *,
-            *::after,
-            *::before {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-                font-family: "Oswald", sans-serif;
-            }
-        
-            body {
-                height: 100vh;
-                background-color: #43504f;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-            }
-        
-            h1 {
-                text-transform: uppercase;
-                word-spacing: 0.5em;
-                font-weight: 400;
-                transform: scale(1, 1.5);
-                color: #33393c;
-                margin-bottom: 30px;
-            }
-        
-            .time-blocks {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 30px;
-            }
-        
-            .block {
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 150px;
-                height: 150px;
-                background: radial-gradient(circle farthest-corner at 150px 150px, #2f3435 60%, #34393c 50%);
-            }
-        
-            .side-text {
-                position: absolute;
-                bottom: -30px;
-                left: 0px;
-                transform: rotate(270deg);
-                transform-origin: 0 0;
-                font-weight: 500;
-                font-size: 20px;
-                color: #667977;
-            }
-        
-            .time-text {
-                font-weight: 500;
-                transform: scaleY(1.8);
-                font-size: 30px;
-                color: #ca2f55;
-            }
-        
-            footer {
-                margin-top: 30px;
-            }
-        
-            footer center {
-                margin-top: 10px;
-            }
-        
-            footer a {
-                font-size: 16px;
-            }
-        </style>
-    
-    
-        <script type="text/javascript">
-          function updateCountdown() {
-              const now = new Date();
-              const targetDate = new Date("2024-03-19T00:00:00");
-              const difference = targetDate - now;
-    
-              if(difference <= 0){
-                  window.location.href = "wishes.html";
-                  return;
-              }
-    
-              const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-              const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-              const minutes = Math.floor((difference / 1000 / 60) % 60);
-              const seconds = Math.floor((difference / 1000) % 60);
-    
-              document.getElementById("days").innerHTML = days;
-              document.getElementById("hours").innerHTML = hours;
-              document.getElementById("minutes").innerHTML = minutes;
-              document.getElementById("seconds").innerHTML = seconds;
+<body>
+    <h1>Just a little more...</h1>
+    <div class="time-blocks">
+        <div class="block"><span class="side-text">DAYS</span><span class="time-text" id = "days"></span></div>
+        <div class="block"><span class="side-text">HOURS</span><span class="time-text" id = "hours"></span></div>
+        <div class="block"><span class="side-text">MINUTES</span><span class="time-text" id = "minutes"></span></div>
+        <div class="block"><span class="side-text">SECONDS</span><span class="time-text" id = "seconds"></span></div>
+    </div>
+
+    <footer>
+      <center style="margin-top: 220px;"> Made with ❤️ by   <a style="text-decoration: none; color: #DDE6ED ; font-family: oswald;  font-weight: bold;" href=" https://wa.me/+918555024135" target="_blank">Pranay Kumar</a> </center>
+    </footer>
+
+    <style media="screen">
+    *,
+    *::after,
+    *::before {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Oswald", sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        background-color: #43504f;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        word-spacing: 0.5em;
+        font-weight: 400;
+        transform: scale(1, 1.5);
+        color: #33393c;
+        margin-bottom: 30px;
+    }
+
+    .time-blocks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .block {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle farthest-corner at 150px 150px, #2f3435 60%, #34393c 50%);
+    }
+
+    .side-text {
+        position: absolute;
+        bottom: -30px;
+        left: 0px;
+        transform: rotate(270deg);
+        transform-origin: 0 0;
+        font-weight: 500;
+        font-size: 20px;
+        color: #667977;
+    }
+
+    .time-text {
+        font-weight: 500;
+        transform: scaleY(1.8);
+        font-size: 30px;
+        color: #ca2f55;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+
+    footer center {
+        margin-top: 10px;
+    }
+
+    footer a {
+        font-size: 16px;
+    }
+</style>
+
+
+    <script type="text/javascript">
+      function updateCountdown() {
+          const now = new Date();
+          const targetDate = new Date("2024-03-19T00:00:00");
+          const difference = targetDate - now;
+
+          if(difference <= 0){
+              window.location.href = "wishes.html";
+              return;
           }
-    
-          setInterval(updateCountdown, 1000);
-        </script>
-    </body>
+
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((difference / 1000 / 60) % 60);
+          const seconds = Math.floor((difference / 1000) % 60);
+
+          document.getElementById("days").innerHTML = days;
+          document.getElementById("hours").innerHTML = hours;
+          document.getElementById("minutes").innerHTML = minutes;
+          document.getElementById("seconds").innerHTML = seconds;
+      }
+
+      setInterval(updateCountdown, 1000);
+    </script>
+
+
+</body>
+
+
 </html>
