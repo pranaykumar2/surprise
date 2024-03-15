@@ -91,14 +91,12 @@
     <script type="text/javascript">
       function updateCountdown() {
           const now = new Date();
-          const targetDate = new Date("2024-03-15T11:27:00");
+          const targetDate = new Date("2024-03-19T00:00:00");
           const difference = targetDate - now;
 
-          // Check if the countdown is finished
           if(difference <= 0){
-              // Redirect to the new page
               window.location.href = "wishes.html";
-              return; // Stop the function here
+              return; 
           }
 
           const days = Math.floor(difference / (1000 * 60 * 60 * 24));
