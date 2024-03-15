@@ -101,6 +101,11 @@
               return; 
           }
 
+          if(sessionStorage.getItem("accessGranted") !== "true"){
+            window.location.href = "index.html"; // Redirect them to the main page or the countdown page
+        }
+
+
           const days = Math.floor(difference / (1000 * 60 * 60 * 24));
           const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
           const minutes = Math.floor((difference / 1000 / 60) % 60);
