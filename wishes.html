@@ -9,97 +9,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   </head>
   <body>
+
+    <audio autoplay loop>
+      <source src="happy-birthday-jazz-171120.mp3" type="audio/mpeg">
+    </audio>
     <h1>Happy Birthday Shashank!!</h1>
 
     <canvas id="birthday"></canvas>
 
-    <div id="testbutton"></div>
+    <a href="https://wa.me/+918555024135" target="_blank" rel="noopener noreferrer">
+      <div id="testbutton">
 
+      </div>
 
-    <div class="details" style="margin-top: 105px;">
-        <span style="font-size:35px; color: #4477CE;">Surprise from 🎉🎉 -- Pranay</span>
-    </div>
+    </a>
 
     <style media="screen">
-      body {
-        margin: 0;
-        background: #020202;
-        cursor: crosshair;
-      }
-      canvas{display:block}
-      h1 {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -30%);
-        color: #fff;
-        font-family: "Source Sans 3";
-        font-size: 4em;
-        font-weight: 900;
-        -webkit-user-select: none;
-        user-select: none;
-      }
+        body {
+            margin: 0;
+            background: #020202;
+            cursor: crosshair;
+        }
 
-      body {
-        height:100vh;
-        width:100vw;
-        background-color:rgb(19, 20, 22);
-        overflow:hidden;
-        font-family: Lato, "Trebuchet MS", "Verdana", "sans-serif";
-      }
+        canvas {
+            display: block;
+        }
 
-      #testbutton {
-        width: 150px;
-        height:50px;
-        border-radius:180px;
-        position:absolute;
-        left:calc(50% - 75px);
-        top:calc(50% - -125px);
-        background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-        cursor:pointer;
-        line-height:12px;
-      }
+        h1 {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -30%);
+            color: #fff;
+            font-family: "Source Sans 3";
+            font-size: 4em;
+            font-weight: 900;
+            -webkit-user-select: none;
+            user-select: none;
+        }
 
-      #testbutton:before {
-        content:'';
-        z-index:1;
-        position:absolute;
-        display:block;
-        width:80%;
-        height:70%;
-        top:15%;
-        left:10%;
-        transition: 0.3s opacity ease-in-out;
-        filter:blur(15px);
-        opacity:0;
-        background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-      }
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(19, 20, 22);
+            overflow: hidden;
+            font-family: Lato, "Trebuchet MS", "Verdana", "sans-serif";
+        }
 
-      #testbutton:hover:before {
-        opacity:1;
-        transition: 0.3s opacity ease-in-out;
-        filter:blur(25px);
-        background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
-       /*143*/
-      }
+        #testbutton {
+            width: 150px;
+            height: 50px;
+            border-radius: 180px;
+            position: absolute;
+            left: calc(50% - 75px);
+            top: calc(50% - -125px);
+            background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+            cursor: pointer;
+            line-height: 12px;
+        }
 
-      #testbutton:after {
-        content:'Say Thanks!!';
-        text-align:center;
-        line-height:40px;
-        font-size:15px;
-        color:rgba(235,235,235,1);
-        font-weight:bold;
-        z-index:5;
-        position:absolute;
-        display:block;
-        border-radius:180px;
-        width:92%;
-        height:80%;
-        top:10%;
-        left:4%;
-        background-color:rgb(19, 20, 22);
-      }
+        #testbutton:before {
+            content: '';
+            z-index: 1;
+            position: absolute;
+            display: block;
+            width: 80%;
+            height: 70%;
+            top: 15%;
+            left: 10%;
+            transition: 0.3s opacity ease-in-out;
+            filter: blur(15px);
+            opacity: 0;
+            background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+        }
+
+        #testbutton:hover:before {
+            opacity: 1;
+            transition: 0.3s opacity ease-in-out;
+            filter: blur(25px);
+            background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+            /*143*/
+        }
+
+        #testbutton:after {
+            content: 'Say Thanks!!';
+            text-align: center;
+            line-height: 40px;
+            font-size: 15px;
+            color: rgba(235, 235, 235, 1);
+            font-weight: bold;
+            z-index: 5;
+            position: absolute;
+            display: block;
+            border-radius: 180px;
+            width: 92%;
+            height: 80%;
+            top: 10%;
+            left: 4%;
+            background-color: rgb(19, 20, 22);
+        }
     </style>
 
     <script type="text/javascript">
@@ -241,7 +249,6 @@
 
       let canvas = document.getElementById('birthday')
       let ctx = canvas.getContext('2d')
-      //01000001 01010011
       let then = timestamp()
 
       let birthday = new Birthday
