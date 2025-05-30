@@ -1,1162 +1,1085 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Nanna</title>
-    <link rel="icon" type="image/png" href="https://i.ibb.co/tYcdLH4/lib-circle-logo-yellowonblack.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-</head>
-<body data-theme="dark">
-    <!-- Audio Control -->
-    <audio id="birthdayAudio" loop>
-        <source src="https://github.com/pranaykumar2/surprise/raw/main/happy-birthday-jazz-171120.mp3" type="audio/mp3">
-    </audio>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Happy Birthday Nanna</title>
+        <link rel="icon" type="image/png" href="https://i.ibb.co/tYcdLH4/lib-circle-logo-yellowonblack.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    </head>
+    <body data-theme="dark">
+        <audio id="birthdayAudio" loop>
+            <source src="https://github.com/pranaykumar2/surprise/raw/main/happy-birthday-jazz-171120.mp3" type="audio/mp3" />
+        </audio>
 
-    <!-- Simple Grid Background -->
-    <div class="grid-background"></div>
+        <div class="grid-background"></div>
 
-    <!-- Navigation -->
-    <nav class="top-nav">
-        <button class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
-            <i data-lucide="sun" class="theme-icon light-icon"></i>
-            <i data-lucide="moon" class="theme-icon dark-icon"></i>
-        </button>
-        
-        <button class="nav-btn audio-btn" onclick="toggleAudio()" aria-label="Toggle Music">
-            <i data-lucide="volume-2" class="audio-icon playing-icon"></i>
-            <i data-lucide="volume-x" class="audio-icon muted-icon"></i>
-        </button>
-    </nav>
+        <nav class="top-nav">
+            <button class="nav-btn theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+                <i data-lucide="sun" class="theme-icon light-icon"></i>
+                <i data-lucide="moon" class="theme-icon dark-icon"></i>
+            </button>
 
-    <!-- Main Content -->
-    <main class="main-container">
-        <section class="hero-section">
-            <div class="content-layout">
-                <!-- Profile Section -->
-                <div class="profile-section">
-                    <div class="profile-container">
-                        <div class="profile-frame">
-                            <img src="dad.jpg" 
-                                 alt="Birthday Celebration" 
-                                 class="profile-image">
-                            <div class="image-overlay">
-                                <div class="overlay-content">
-                                    <h3>Today's Star</h3>
-                                    <p>Celebrating You</p>
+            <button class="nav-btn audio-btn" onclick="toggleAudio()" aria-label="Toggle Music">
+                <i data-lucide="volume-2" class="audio-icon playing-icon"></i>
+                <i data-lucide="volume-x" class="audio-icon muted-icon"></i>
+            </button>
+        </nav>
+
+        <main class="main-container">
+            <section class="hero-section">
+                <div class="content-layout">
+                    <div class="profile-section">
+                        <div class="profile-container">
+                            <div class="profile-frame">
+                                <img src="dad.jpg" alt="Birthday Celebration" class="profile-image" />
+                                <div class="image-overlay">
+                                    <div class="overlay-content">
+                                        <h3>Today's Star</h3>
+                                        <p>Celebrating You</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Content Section -->
-                <div class="content-section">
-                    <!-- Typography -->
-                    <div class="typography-area">
-                        <h1 class="main-heading">
-                            <span class="heading-line">Happy Birthday</span>
-                            <span class="name-line" id="nameDisplay"></span>
-                        </h1>
-                        <p class="subtitle-text" id="subtitleDisplay"></p>
-                    </div>
-
-                    <!-- Cards System -->
-                    <div class="cards-system">
-                        <div class="system-header">
-                            <h2>Family Wishes</h2>
-                            <p>Messages filled with love</p>
+                    <div class="content-section">
+                        <div class="typography-area">
+                            <h1 class="main-heading">
+                                <span class="heading-line">Happy Birthday</span>
+                                <span class="name-line" id="nameDisplay"></span>
+                            </h1>
+                            <p class="subtitle-text" id="subtitleDisplay"></p>
                         </div>
 
-                        <!-- Card Navigation -->
-                        <div class="cards-navigation">
-                            <button class="nav-arrow nav-prev" id="prevCard" aria-label="Previous Card">
-                                <i data-lucide="chevron-left"></i>
-                            </button>
+                        <div class="cards-system">
+                            <div class="system-header">
+                                <h2>Family Wishes</h2>
+                                <p>Messages filled with love</p>
+                            </div>
 
-                            <div class="cards-container">
-                                <div class="cards-stack" id="cardsStack">
-                                    <!-- Card 1 -->
-                                    <div class="wish-card" data-index="0">
-                                        <div class="card-content">
-                                            <div class="card-header">
-                                                <div class="author-section">
-                                                    <div class="author-avatar">
-                                                        <i data-lucide="user"></i>
+                            <div class="cards-navigation">
+                                <button class="nav-arrow nav-prev" id="prevCard" aria-label="Previous Card">
+                                    <i data-lucide="chevron-left"></i>
+                                </button>
+
+                                <div class="cards-container">
+                                    <div class="cards-stack" id="cardsStack">
+                                        <div class="wish-card" data-index="0">
+                                            <div class="card-content">
+                                                <div class="card-header">
+                                                    <div class="author-section">
+                                                        <div class="author-avatar">
+                                                            <i data-lucide="heart"></i>
+                                                        </div>
+                                                        <div class="author-info">
+                                                            <h4>Pranay</h4>
+                                                            <span>Your first son</span>
+                                                        </div>
                                                     </div>
-                                                    <div class="author-info">
-                                                        <h4>Dad</h4>
-                                                        <span>Your loving Father</span>
+                                                    <div class="card-meta">
+                                                        <i data-lucide="gift"></i>
                                                     </div>
                                                 </div>
-                                                <div class="card-meta">
-                                                    <i data-lucide="heart"></i>
+                                                <div class="card-body">
+                                                    <p>
+                                                        "Happy Birthday Nanna! Thank you for always being my strength and inspiration. Your wisdom guides me every day, and I'm so grateful for your endless support and love. You've taught me
+                                                        how to face life's challenges with courage. Wishing you a day filled with happiness and joy! Love you so much! ❤️"
+                                                    </p>
                                                 </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>"Happy Birthday to the most wonderful daughter! Your smile lights up our world, and your kindness touches everyone around you. May this new year bring you all the happiness you deserve. Love you endlessly! 💕"</p>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <!-- Card 2 -->
-                                    <div class="wish-card" data-index="1">
-                                        <div class="card-content">
-                                            <div class="card-header">
-                                                <div class="author-section">
-                                                    <div class="author-avatar">
+                                        <div class="wish-card" data-index="1">
+                                            <div class="card-content">
+                                                <div class="card-header">
+                                                    <div class="author-section">
+                                                        <div class="author-avatar">
+                                                            <i data-lucide="smile"></i>
+                                                        </div>
+                                                        <div class="author-info">
+                                                            <h4>Praneeth</h4>
+                                                            <span>Your second son</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-meta">
+                                                        <i data-lucide="cake"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p>
+                                                        "Happy Birthday to the world's best dad! Your kindness and patience have taught me so much. Thank you for always believing in me and supporting my dreams. You're not just my father but
+                                                        also my best friend and role model. May this year bring you all the happiness you deserve! 🎉"
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="wish-card" data-index="2">
+                                            <div class="card-content">
+                                                <div class="card-header">
+                                                    <div class="author-section">
+                                                        <div class="author-avatar">
+                                                            <i data-lucide="flower"></i>
+                                                        </div>
+                                                        <div class="author-info">
+                                                            <h4>Anu Radha</h4>
+                                                            <span>Your loving wife</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-meta">
                                                         <i data-lucide="heart"></i>
                                                     </div>
-                                                    <div class="author-info">
-                                                        <h4>Mom</h4>
-                                                        <span>Your caring Mother</span>
-                                                    </div>
                                                 </div>
-                                                <div class="card-meta">
-                                                    <i data-lucide="star"></i>
+                                                <div class="card-body">
+                                                    <p>
+                                                        "To my wonderful husband on your special day, you continue to amaze me with your strength and kindness. Through all these years, your love has been my greatest treasure. Thank you for
+                                                        being the incredible husband and father that you are. May this birthday bring you all the joy and happiness you bring to our lives every day. I love you! 💕"
+                                                    </p>
                                                 </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>"My dearest daughter, watching you grow into the amazing person you are today fills my heart with pride. Your compassion and strength inspire us all. Wishing you a birthday as beautiful as your soul! ✨"</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- Card 3 -->
-                                    <div class="wish-card" data-index="2">
-                                        <div class="card-content">
-                                            <div class="card-header">
-                                                <div class="author-section">
-                                                    <div class="author-avatar">
-                                                        <i data-lucide="smile"></i>
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h4>Brother</h4>
-                                                        <span>Your protective Brother</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-meta">
-                                                    <i data-lucide="gift"></i>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>"Happy Birthday, sis! You're not just my sister, but also my best friend and guide. Thanks for always being there with your wisdom and love. Hope your special day is filled with joy and laughter! 🎉"</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 4 -->
-                                    <div class="wish-card" data-index="3">
-                                        <div class="card-content">
-                                            <div class="card-header">
-                                                <div class="author-section">
-                                                    <div class="author-avatar">
-                                                        <i data-lucide="flower"></i>
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h4>Grandma</h4>
-                                                        <span>Your loving Grandmother</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-meta">
-                                                    <i data-lucide="sparkles"></i>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>"My precious granddaughter, you are the sunshine of our family. Your gentle heart and beautiful spirit make every day brighter. May God bless you with health, happiness, and all your heart desires! 🌸"</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Card 5 -->
-                                    <div class="wish-card" data-index="4">
-                                        <div class="card-content">
-                                            <div class="card-header">
-                                                <div class="author-section">
-                                                    <div class="author-avatar">
-                                                        <i data-lucide="zap"></i>
-                                                    </div>
-                                                    <div class="author-info">
-                                                        <h4>Uncle</h4>
-                                                        <span>Your fun Uncle</span>
-                                                    </div>
-                                                </div>
-                                                <div class="card-meta">
-                                                    <i data-lucide="rocket"></i>
-                                                </div>
-                                            </div>
-                                            <div class="card-body">
-                                                <p>"Happy Birthday to my favorite niece! Your enthusiasm and zest for life are truly contagious. Keep shining bright and chasing your dreams. Here's to another year of adventures and achievements! 🚀"</p>
-                                            </div>
-                                        </div>
+                                    <div class="card-indicators">
+                                        <div class="indicator active" data-index="0"></div>
+                                        <div class="indicator" data-index="1"></div>
+                                        <div class="indicator" data-index="2"></div>
                                     </div>
                                 </div>
 
-                                <!-- Indicators -->
-                                <div class="card-indicators">
-                                    <div class="indicator active" data-index="0"></div>
-                                    <div class="indicator" data-index="1"></div>
-                                    <div class="indicator" data-index="2"></div>
-                                    <div class="indicator" data-index="3"></div>
-                                    <div class="indicator" data-index="4"></div>
+                                <button class="nav-arrow nav-next" id="nextCard" aria-label="Next Card">
+                                    <i data-lucide="chevron-right"></i>
+                                </button>
+                            </div>
+
+                            <div class="progress-system">
+                                <div class="progress-info">
+                                    <span class="progress-counter" id="progressCounter">1 of 5</span>
+                                </div>
+                                <div class="progress-track">
+                                    <div class="progress-fill" id="progressFill"></div>
                                 </div>
                             </div>
-
-                            <button class="nav-arrow nav-next" id="nextCard" aria-label="Next Card">
-                                <i data-lucide="chevron-right"></i>
-                            </button>
                         </div>
 
-                        <!-- Progress -->
-                        <div class="progress-system">
-                            <div class="progress-info">
-                                <span class="progress-counter" id="progressCounter">1 of 5</span>
-                            </div>
-                            <div class="progress-track">
-                                <div class="progress-fill" id="progressFill"></div>
-                            </div>
+                        <div class="action-section">
+                            <a href="https://wa.me/+918555024135" target="_blank" rel="noopener noreferrer" class="primary-action">
+                                <i data-lucide="heart-handshake"></i>
+                                <span>Send Thanks</span>
+                            </a>
                         </div>
-                    </div>
-
-                    <!-- Action Button -->
-                    <div class="action-section">
-                        <a href="https://wa.me/+918555024135" target="_blank" rel="noopener noreferrer" class="primary-action">
-                            <i data-lucide="heart-handshake"></i>
-                            <span>Send Thanks</span>
-                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <style>
-        /* ===== DESIGN SYSTEM ===== */
-        :root {
-            /* Dark Theme Colors */
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #1a1a2e;
-            --surface-primary: rgba(255, 255, 255, 0.05);
-            --surface-secondary: rgba(255, 255, 255, 0.1);
-            --surface-elevated: rgba(255, 255, 255, 0.15);
-            
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.8);
-            --text-tertiary: rgba(255, 255, 255, 0.6);
-            
-            --accent-primary: #8b5cf6;
-            --accent-secondary: #06b6d4;
-            --accent-tertiary: #f59e0b;
-            
-            --grid-color: rgba(255, 255, 255, 0.1);
-            --grid-size: 40px;
-            
-            /* Shadows */
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.2);
-            --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.3);
-            
-            /* Animations */
-            --duration-fast: 0.2s;
-            --duration-normal: 0.4s;
-            --duration-slow: 0.8s;
-            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-            
-            /* Spacing */
-            --space-xs: 0.25rem;
-            --space-sm: 0.5rem;
-            --space-md: 0.75rem;
-            --space-lg: 1rem;
-            --space-xl: 1.5rem;
-            --space-2xl: 2rem;
-            --space-3xl: 3rem;
-            --space-4xl: 4rem;
-            
-            /* Typography */
-            --font-sans: 'Inter', sans-serif;
-            --font-display: 'Space Grotesk', sans-serif;
-            --text-xs: 0.75rem;
-            --text-sm: 0.875rem;
-            --text-base: 1rem;
-            --text-lg: 1.125rem;
-            --text-xl: 1.25rem;
-            --text-2xl: 1.5rem;
-            --text-3xl: 1.875rem;
-            --text-4xl: 2.25rem;
-            --text-5xl: 3rem;
-            --text-6xl: 3.75rem;
-        }
-
-        /* Light Theme */
-        [data-theme="light"] {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8fafc;
-            --surface-primary: rgba(0, 0, 0, 0.05);
-            --surface-secondary: rgba(0, 0, 0, 0.1);
-            --surface-elevated: rgba(0, 0, 0, 0.15);
-            
-            --text-primary: #0f172a;
-            --text-secondary: rgba(15, 23, 42, 0.8);
-            --text-tertiary: rgba(15, 23, 42, 0.6);
-            
-            --grid-color: rgba(0, 0, 0, 0.1);
-        }
-
-        /* ===== BASE STYLES ===== */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        body {
-            font-family: var(--font-sans);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            overflow-x: hidden;
-            transition: all var(--duration-normal) var(--ease-smooth);
-        }
-
-        /* ===== SIMPLE GRID BACKGROUND ===== */
-        .grid-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: var(--grid-size) var(--grid-size);
-            background-position: 0 0, 0 0;
-            z-index: 1;
-            pointer-events: none;
-            opacity: 0.5;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(var(--grid-size), var(--grid-size)); }
-        }
-
-        /* ===== NAVIGATION ===== */
-        .top-nav {
-            position: fixed;
-            top: var(--space-2xl);
-            right: var(--space-2xl);
-            z-index: 100;
-            display: flex;
-            gap: var(--space-md);
-        }
-
-        .nav-btn {
-            width: 48px;
-            height: 48px;
-            background: var(--surface-elevated);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--duration-normal) var(--ease-spring);
-        }
-
-        .nav-btn:hover {
-            background: var(--surface-elevated);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .nav-btn svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Theme Icons */
-        .theme-btn .dark-icon {
-            display: block;
-        }
-
-        .theme-btn .light-icon {
-            display: none;
-        }
-
-        [data-theme="light"] .theme-btn .dark-icon {
-            display: none;
-        }
-
-        [data-theme="light"] .theme-btn .light-icon {
-            display: block;
-        }
-
-        /* Audio Icons */
-        .audio-btn .muted-icon {
-            display: none;
-        }
-
-        .audio-btn.muted .playing-icon {
-            display: none;
-        }
-
-        .audio-btn.muted .muted-icon {
-            display: block;
-        }
-
-        /* ===== MAIN CONTAINER ===== */
-        .main-container {
-            position: relative;
-            z-index: 10;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--space-2xl);
-        }
-
-        .hero-section {
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .content-layout {
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: var(--space-4xl);
-            align-items: center;
-        }
-
-        /* ===== PROFILE SECTION ===== */
-        .profile-section {
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-container {
-            position: relative;
-            animation: profileFloat 6s ease-in-out infinite;
-        }
-
-        @keyframes profileFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .profile-frame {
-            position: relative;
-            width: 320px;
-            height: 400px;
-            background: var(--surface-elevated);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: var(--space-xl);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 16px;
-            transition: all var(--duration-slow) var(--ease-smooth);
-        }
-
-        .image-overlay {
-            position: absolute;
-            bottom: var(--space-xl);
-            left: var(--space-xl);
-            right: var(--space-xl);
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-            padding: var(--space-xl);
-            border-radius: 16px;
-            transform: translateY(100%);
-            transition: all var(--duration-normal) var(--ease-spring);
-        }
-
-        .profile-frame:hover .image-overlay {
-            transform: translateY(0);
-        }
-
-        .overlay-content h3 {
-            font-family: var(--font-display);
-            font-size: var(--text-xl);
-            color: white;
-            margin-bottom: var(--space-sm);
-        }
-
-        .overlay-content p {
-            font-size: var(--text-sm);
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* ===== CONTENT SECTION ===== */
-        .content-section {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-3xl);
-        }
-
-        /* ===== TYPOGRAPHY ===== */
-        .typography-area {
-            margin-bottom: var(--space-2xl);
-        }
-
-        .main-heading {
-            font-family: var(--font-display);
-            font-weight: 700;
-            line-height: 0.9;
-            margin-bottom: var(--space-xl);
-        }
-
-        .heading-line {
-            display: block;
-            font-size: clamp(var(--text-4xl), 8vw, var(--text-6xl));
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .name-line {
-            font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
-            background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .subtitle-text {
-            font-size: var(--text-lg);
-            color: var(--text-secondary);
-            line-height: 1.8;
-            max-width: 600px;
-        }
-
-        /* ===== CARDS SYSTEM ===== */
-        .cards-system {
-            background: var(--surface-primary);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: var(--space-3xl);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .system-header {
-            text-align: center;
-            margin-bottom: var(--space-3xl);
-        }
-
-        .system-header h2 {
-            font-family: var(--font-display);
-            font-size: var(--text-2xl);
-            color: var(--text-primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        .system-header p {
-            color: var(--text-tertiary);
-            font-size: var(--text-base);
-        }
-
-        /* ===== CARD NAVIGATION ===== */
-        .cards-navigation {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2xl);
-            margin-bottom: var(--space-2xl);
-        }
-
-        .nav-arrow {
-            width: 56px;
-            height: 56px;
-            background: var(--surface-elevated);
-            backdrop-filter: blur(20px);
-            border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--text-primary);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all var(--duration-normal) var(--ease-spring);
-            flex-shrink: 0;
-        }
-
-        .nav-arrow:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-primary);
-        }
-
-        .nav-arrow svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .cards-container {
-            flex: 1;
-            position: relative;
-        }
-
-        .cards-stack {
-            position: relative;
-            height: 350px;
-            margin-bottom: var(--space-xl);
-            perspective: 1000px;
-        }
-
-        .wish-card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-primary);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            box-shadow: var(--shadow-lg);
-            transition: all var(--duration-slow) var(--ease-spring);
-            transform-origin: center bottom;
-            cursor: pointer;
-            overflow: hidden;
-        }
-
-        .wish-card:hover {
-            box-shadow: 0 0 32px rgba(139, 92, 246, 0.3);
-            border-color: var(--accent-primary);
-        }
-
-        .card-content {
-            height: 100%;
-            padding: var(--space-2xl);
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-xl);
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .author-section {
-            display: flex;
-            align-items: center;
-            gap: var(--space-lg);
-        }
-
-        .author-avatar {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .author-avatar svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .author-info h4 {
-            font-family: var(--font-display);
-            font-size: var(--text-lg);
-            color: var(--text-primary);
-            margin-bottom: var(--space-xs);
-        }
-
-        .author-info span {
-            font-size: var(--text-sm);
-            color: var(--text-tertiary);
-        }
-
-        .card-meta svg {
-            width: 20px;
-            height: 20px;
-            color: var(--accent-secondary);
-        }
-
-        .card-body {
-            flex: 1;
-        }
-
-        .card-body p {
-            font-size: var(--text-base);
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-
-        /* Card Positioning */
-        .wish-card.active {
-            z-index: 5;
-            transform: translateY(0) rotateY(0deg) scale(1);
-            opacity: 1;
-        }
-
-        .wish-card.behind-1 {
-            z-index: 4;
-            transform: translateY(-8px) rotateY(-2deg) scale(0.98);
-            opacity: 0.9;
-        }
-
-        .wish-card.behind-2 {
-            z-index: 3;
-            transform: translateY(-16px) rotateY(1deg) scale(0.96);
-            opacity: 0.7;
-        }
-
-        .wish-card.behind-3 {
-            z-index: 2;
-            transform: translateY(-24px) rotateY(-1deg) scale(0.94);
-            opacity: 0.5;
-        }
-
-        .wish-card.behind-4 {
-            z-index: 1;
-            transform: translateY(-32px) rotateY(2deg) scale(0.92);
-            opacity: 0.3;
-        }
-
-        /* ===== INDICATORS ===== */
-        .card-indicators {
-            display: flex;
-            justify-content: center;
-            gap: var(--space-md);
-            margin-bottom: var(--space-xl);
-        }
-
-        .indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--surface-secondary);
-            cursor: pointer;
-            transition: all var(--duration-normal) var(--ease-spring);
-        }
-
-        .indicator.active {
-            background: var(--accent-primary);
-            transform: scale(1.2);
-            box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
-        }
-
-        .indicator:hover {
-            transform: scale(1.1);
-            background: var(--accent-secondary);
-        }
-
-        /* ===== PROGRESS SYSTEM ===== */
-        .progress-system {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-lg);
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: center;
-        }
-
-        .progress-counter {
-            font-size: var(--text-sm);
-            color: var(--text-primary);
-            background: var(--surface-secondary);
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .progress-track {
-            height: 6px;
-            background: var(--surface-secondary);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-            border-radius: 3px;
-            transition: width var(--duration-slow) var(--ease-smooth);
-            width: 20%;
-        }
-
-        /* ===== ACTION SECTION ===== */
-        .action-section {
-            display: flex;
-            justify-content: center;
-        }
-
-        .primary-action {
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-lg);
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: white;
-            text-decoration: none;
-            padding: var(--space-xl) var(--space-3xl);
-            border-radius: 50px;
-            font-family: var(--font-display);
-            font-size: var(--text-lg);
-            font-weight: 600;
-            box-shadow: var(--shadow-md);
-            transition: all var(--duration-normal) var(--ease-spring);
-        }
-
-        .primary-action:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .primary-action svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 1024px) {
-            .content-layout {
-                grid-template-columns: 1fr;
-                gap: var(--space-3xl);
-                text-align: center;
+            </section>
+        </main>
+
+        <style>
+            :root {
+                --bg-primary: #0a0a0f;
+                --bg-secondary: #1a1a2e;
+                --surface-primary: rgba(255, 255, 255, 0.05);
+                --surface-secondary: rgba(255, 255, 255, 0.1);
+                --surface-elevated: rgba(255, 255, 255, 0.15);
+
+                --text-primary: #ffffff;
+                --text-secondary: rgba(255, 255, 255, 0.8);
+                --text-tertiary: rgba(255, 255, 255, 0.6);
+
+                --accent-primary: #8b5cf6;
+                --accent-secondary: #06b6d4;
+                --accent-tertiary: #f59e0b;
+
+                --grid-color: rgba(255, 255, 255, 0.1);
+                --grid-size: 40px;
+
+                --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+                --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.2);
+                --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.3);
+
+                --duration-fast: 0.2s;
+                --duration-normal: 0.4s;
+                --duration-slow: 0.8s;
+                --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+                --space-xs: 0.25rem;
+                --space-sm: 0.5rem;
+                --space-md: 0.75rem;
+                --space-lg: 1rem;
+                --space-xl: 1.5rem;
+                --space-2xl: 2rem;
+                --space-3xl: 3rem;
+                --space-4xl: 4rem;
+
+                --font-sans: "Inter", sans-serif;
+                --font-display: "Space Grotesk", sans-serif;
+                --text-xs: 0.75rem;
+                --text-sm: 0.875rem;
+                --text-base: 1rem;
+                --text-lg: 1.125rem;
+                --text-xl: 1.25rem;
+                --text-2xl: 1.5rem;
+                --text-3xl: 1.875rem;
+                --text-4xl: 2.25rem;
+                --text-5xl: 3rem;
+                --text-6xl: 3.75rem;
             }
 
-            .profile-frame {
-                width: 280px;
-                height: 350px;
-            }
-        }
+            [data-theme="light"] {
+                --bg-primary: #ffffff;
+                --bg-secondary: #f8fafc;
+                --surface-primary: rgba(0, 0, 0, 0.05);
+                --surface-secondary: rgba(0, 0, 0, 0.1);
+                --surface-elevated: rgba(0, 0, 0, 0.15);
 
-        @media (max-width: 768px) {
-            .main-container {
-                padding: var(--space-xl);
-            }
+                --text-primary: #0f172a;
+                --text-secondary: rgba(15, 23, 42, 0.8);
+                --text-tertiary: rgba(15, 23, 42, 0.6);
 
-            .top-nav {
-                top: var(--space-xl);
-                right: var(--space-xl);
+                --grid-color: rgba(0, 0, 0, 0.1);
             }
 
-            .profile-frame {
-                width: 240px;
-                height: 300px;
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
             }
 
-            .cards-system {
-                padding: var(--space-2xl);
+            html {
+                font-size: 16px;
+                line-height: 1.6;
             }
 
-            .cards-stack {
-                height: 300px;
+            body {
+                font-family: var(--font-sans);
+                background: var(--bg-primary);
+                color: var(--text-primary);
+                min-height: 100vh;
+                overflow-x: hidden;
+                transition: all var(--duration-normal) var(--ease-smooth);
             }
 
-            .nav-arrow {
-                width: 48px;
-                height: 48px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .main-container {
-                padding: var(--space-lg);
-            }
-
-            .profile-frame {
-                width: 200px;
-                height: 250px;
-                padding: var(--space-lg);
+            .grid-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: linear-gradient(var(--grid-color) 1px, transparent 1px), linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+                background-size: var(--grid-size) var(--grid-size);
+                background-position: 0 0, 0 0;
+                z-index: 1;
+                pointer-events: none;
+                opacity: 0.5;
+                animation: gridMove 20s linear infinite;
             }
 
-            .cards-system {
-                padding: var(--space-lg);
-            }
-
-            .card-content {
-                padding: var(--space-lg);
-            }
-
-            .cards-navigation {
-                gap: var(--space-lg);
-            }
-        }
-    </style>
-
-    <script>
-        // ===== TYPEWRITER SYSTEM =====
-        class TypewriterSystem {
-            constructor() {
-                this.nameText = "Nanna!!";
-                this.subtitleText = "Today we celebrate the incredible person you are, the love you share, and the joy you bring to our lives every single day.";
-                this.init();
-            }
-
-            init() {
-                setTimeout(() => {
-                    this.typewriteName();
-                }, 1000);
-            }
-
-            typewriteName() {
-                const nameElement = document.getElementById('nameDisplay');
-                let index = 0;
-
-                const type = () => {
-                    if (index < this.nameText.length) {
-                        nameElement.textContent += this.nameText.charAt(index);
-                        index++;
-                        setTimeout(type, 150);
-                    } else {
-                        setTimeout(() => {
-                            this.typewriteSubtitle();
-                        }, 800);
-                    }
-                };
-
-                type();
-            }
-
-            typewriteSubtitle() {
-                const subtitleElement = document.getElementById('subtitleDisplay');
-                let index = 0;
-
-                const type = () => {
-                    if (index < this.subtitleText.length) {
-                        subtitleElement.textContent += this.subtitleText.charAt(index);
-                        index++;
-                        setTimeout(type, 30);
-                    }
-                };
-
-                type();
-            }
-        }
-
-        // ===== CARDS SYSTEM =====
-        class CardsSystem {
-            constructor() {
-                this.cards = document.querySelectorAll('.wish-card');
-                this.indicators = document.querySelectorAll('.indicator');
-                this.prevBtn = document.getElementById('prevCard');
-                this.nextBtn = document.getElementById('nextCard');
-                this.progressCounter = document.getElementById('progressCounter');
-                this.progressFill = document.getElementById('progressFill');
-                
-                this.currentIndex = 0;
-                this.totalCards = this.cards.length;
-                this.isAnimating = false;
-                
-                this.init();
-            }
-
-            init() {
-                this.updateCardPositions();
-                this.updateUI();
-                this.bindEvents();
-            }
-
-            bindEvents() {
-                this.prevBtn.addEventListener('click', () => this.previousCard());
-                this.nextBtn.addEventListener('click', () => this.nextCard());
-                
-                // Keyboard navigation
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'ArrowLeft') this.previousCard();
-                    if (e.key === 'ArrowRight') this.nextCard();
-                });
-                
-                // Indicator clicks
-                this.indicators.forEach((indicator, index) => {
-                    indicator.addEventListener('click', () => this.goToCard(index));
-                });
-            }
-
-            nextCard() {
-                if (this.isAnimating) return;
-                
-                this.currentIndex = (this.currentIndex + 1) % this.totalCards;
-                this.animateTransition();
-            }
-
-            previousCard() {
-                if (this.isAnimating) return;
-                
-                this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
-                this.animateTransition();
-            }
-
-            goToCard(index) {
-                if (this.isAnimating || index === this.currentIndex) return;
-                
-                this.currentIndex = index;
-                this.animateTransition();
-            }
-
-            animateTransition() {
-                this.isAnimating = true;
-                
-                this.cards.forEach(card => {
-                    card.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                });
-                
-                this.updateCardPositions();
-                this.updateUI();
-                
-                setTimeout(() => {
-                    this.isAnimating = false;
-                    this.cards.forEach(card => {
-                        card.style.transition = '';
-                    });
-                }, 800);
-            }
-
-            updateCardPositions() {
-                this.cards.forEach((card, index) => {
-                    card.classList.remove('active', 'behind-1', 'behind-2', 'behind-3', 'behind-4');
-                    
-                    const relativePosition = (index - this.currentIndex + this.totalCards) % this.totalCards;
-                    
-                    switch (relativePosition) {
-                        case 0:
-                            card.classList.add('active');
-                            break;
-                        case 1:
-                        case this.totalCards - 1:
-                            card.classList.add('behind-1');
-                            break;
-                        case 2:
-                        case this.totalCards - 2:
-                            card.classList.add('behind-2');
-                            break;
-                        case 3:
-                        case this.totalCards - 3:
-                            card.classList.add('behind-3');
-                            break;
-                        default:
-                            card.classList.add('behind-4');
-                    }
-                });
-            }
-
-            updateUI() {
-                this.progressCounter.textContent = `${this.currentIndex + 1} of ${this.totalCards}`;
-                
-                const progressWidth = ((this.currentIndex + 1) / this.totalCards) * 100;
-                this.progressFill.style.width = `${progressWidth}%`;
-                
-                this.indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === this.currentIndex);
-                });
-            }
-        }
-
-        // ===== THEME SYSTEM =====
-        class ThemeSystem {
-            constructor() {
-                this.currentTheme = localStorage.getItem('theme') || 'dark';
-                this.init();
-            }
-
-            init() {
-                this.applyTheme(this.currentTheme);
-            }
-
-            applyTheme(theme) {
-                document.body.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-                this.currentTheme = theme;
-            }
-
-            toggle() {
-                const newTheme = this.currentTheme === 'dark' ? 'light' : 'dark';
-                this.applyTheme(newTheme);
-            }
-        }
-
-        // ===== AUDIO SYSTEM =====
-        class AudioSystem {
-            constructor() {
-                this.audio = document.getElementById('birthdayAudio');
-                this.isPlaying = false;
-                this.init();
-            }
-
-            init() {
-                this.audio.volume = 0.5;
-                this.updateIcon();
-            }
-
-            toggle() {
-                if (this.isPlaying) {
-                    this.pause();
-                } else {
-                    this.play();
+            @keyframes gridMove {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(var(--grid-size), var(--grid-size));
                 }
             }
 
-            play() {
-                this.audio.play().then(() => {
-                    this.isPlaying = true;
+            .top-nav {
+                position: fixed;
+                top: var(--space-2xl);
+                right: var(--space-2xl);
+                z-index: 100;
+                display: flex;
+                gap: var(--space-md);
+            }
+
+            .nav-btn {
+                width: 48px;
+                height: 48px;
+                background: var(--surface-elevated);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                color: var(--text-primary);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all var(--duration-normal) var(--ease-spring);
+            }
+
+            .nav-btn:hover {
+                background: var(--surface-elevated);
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }
+
+            .nav-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .theme-btn .dark-icon {
+                display: block;
+            }
+
+            .theme-btn .light-icon {
+                display: none;
+            }
+
+            [data-theme="light"] .theme-btn .dark-icon {
+                display: none;
+            }
+
+            [data-theme="light"] .theme-btn .light-icon {
+                display: block;
+            }
+
+            .audio-btn .muted-icon {
+                display: none;
+            }
+
+            .audio-btn.muted .playing-icon {
+                display: none;
+            }
+
+            .audio-btn.muted .muted-icon {
+                display: block;
+            }
+
+            .main-container {
+                position: relative;
+                z-index: 10;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: var(--space-2xl);
+            }
+
+            .hero-section {
+                width: 100%;
+                max-width: 1200px;
+            }
+
+            .content-layout {
+                display: grid;
+                grid-template-columns: 400px 1fr;
+                gap: var(--space-4xl);
+                align-items: center;
+            }
+
+            .profile-section {
+                display: flex;
+                justify-content: center;
+            }
+
+            .profile-container {
+                position: relative;
+                animation: profileFloat 6s ease-in-out infinite;
+            }
+
+            @keyframes profileFloat {
+                0%,
+                100% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(-10px);
+                }
+            }
+
+            .profile-frame {
+                position: relative;
+                width: 320px;
+                height: 400px;
+                background: var(--surface-elevated);
+                backdrop-filter: blur(20px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
+                padding: var(--space-xl);
+                box-shadow: var(--shadow-lg);
+                overflow: hidden;
+            }
+
+            .profile-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+                transition: all var(--duration-slow) var(--ease-smooth);
+            }
+
+            .image-overlay {
+                position: absolute;
+                bottom: var(--space-xl);
+                left: var(--space-xl);
+                right: var(--space-xl);
+                background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+                padding: var(--space-xl);
+                border-radius: 16px;
+                transform: translateY(100%);
+                transition: all var(--duration-normal) var(--ease-spring);
+            }
+
+            .profile-frame:hover .image-overlay {
+                transform: translateY(0);
+            }
+
+            .overlay-content h3 {
+                font-family: var(--font-display);
+                font-size: var(--text-xl);
+                color: white;
+                margin-bottom: var(--space-sm);
+            }
+
+            .overlay-content p {
+                font-size: var(--text-sm);
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .content-section {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-3xl);
+            }
+
+
+            .typography-area {
+                margin-bottom: var(--space-2xl);
+            }
+
+            .main-heading {
+                font-family: var(--font-display);
+                font-weight: 700;
+                line-height: 0.9;
+                margin-bottom: var(--space-xl);
+            }
+
+            .heading-line {
+                display: block;
+                font-size: clamp(var(--text-4xl), 8vw, var(--text-6xl));
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .name-line {
+                font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
+                background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            .subtitle-text {
+                font-size: var(--text-lg);
+                color: var(--text-secondary);
+                line-height: 1.8;
+                max-width: 600px;
+            }
+
+            .cards-system {
+                background: var(--surface-primary);
+                backdrop-filter: blur(20px);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 24px;
+                padding: var(--space-3xl);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .system-header {
+                text-align: center;
+                margin-bottom: var(--space-3xl);
+            }
+
+            .system-header h2 {
+                font-family: var(--font-display);
+                font-size: var(--text-2xl);
+                color: var(--text-primary);
+                margin-bottom: var(--space-sm);
+            }
+
+            .system-header p {
+                color: var(--text-tertiary);
+                font-size: var(--text-base);
+            }
+
+            .cards-navigation {
+                display: flex;
+                align-items: center;
+                gap: var(--space-2xl);
+                margin-bottom: var(--space-2xl);
+            }
+
+            .nav-arrow {
+                width: 56px;
+                height: 56px;
+                background: var(--surface-elevated);
+                backdrop-filter: blur(20px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: var(--text-primary);
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all var(--duration-normal) var(--ease-spring);
+                flex-shrink: 0;
+            }
+
+            .nav-arrow:hover {
+                transform: scale(1.1);
+                box-shadow: var(--shadow-md);
+                border-color: var(--accent-primary);
+            }
+
+            .nav-arrow svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .cards-container {
+                flex: 1;
+                position: relative;
+            }
+
+            .cards-stack {
+                position: relative;
+                height: 350px;
+                margin-bottom: var(--space-xl);
+                perspective: 1000px;
+            }
+
+            .wish-card {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: var(--bg-primary);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 20px;
+                box-shadow: var(--shadow-lg);
+                transition: all var(--duration-slow) var(--ease-spring);
+                transform-origin: center bottom;
+                cursor: pointer;
+                overflow: hidden;
+            }
+
+            .wish-card:hover {
+                box-shadow: 0 0 32px rgba(139, 92, 246, 0.3);
+                border-color: var(--accent-primary);
+            }
+
+            .card-content {
+                height: 100%;
+                padding: var(--space-2xl);
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-xl);
+            }
+
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .author-section {
+                display: flex;
+                align-items: center;
+                gap: var(--space-lg);
+            }
+
+            .author-avatar {
+                width: 48px;
+                height: 48px;
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+            }
+
+            .author-avatar svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .author-info h4 {
+                font-family: var(--font-display);
+                font-size: var(--text-lg);
+                color: var(--text-primary);
+                margin-bottom: var(--space-xs);
+            }
+
+            .author-info span {
+                font-size: var(--text-sm);
+                color: var(--text-tertiary);
+            }
+
+            .card-meta svg {
+                width: 20px;
+                height: 20px;
+                color: var(--accent-secondary);
+            }
+
+            .card-body {
+                flex: 1;
+            }
+
+            .card-body p {
+                font-size: var(--text-base);
+                line-height: 1.8;
+                color: var(--text-secondary);
+            }
+
+            .wish-card.active {
+                z-index: 5;
+                transform: translateY(0) rotateY(0deg) scale(1);
+                opacity: 1;
+            }
+
+            .wish-card.behind-1 {
+                z-index: 4;
+                transform: translateY(-8px) rotateY(-2deg) scale(0.98);
+                opacity: 0.9;
+            }
+
+            .wish-card.behind-2 {
+                z-index: 3;
+                transform: translateY(-16px) rotateY(1deg) scale(0.96);
+                opacity: 0.7;
+            }
+
+            .wish-card.behind-3 {
+                z-index: 2;
+                transform: translateY(-24px) rotateY(-1deg) scale(0.94);
+                opacity: 0.5;
+            }
+
+            .wish-card.behind-4 {
+                z-index: 1;
+                transform: translateY(-32px) rotateY(2deg) scale(0.92);
+                opacity: 0.3;
+            }
+
+            .card-indicators {
+                display: flex;
+                justify-content: center;
+                gap: var(--space-md);
+                margin-bottom: var(--space-xl);
+            }
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: var(--surface-secondary);
+                cursor: pointer;
+                transition: all var(--duration-normal) var(--ease-spring);
+            }
+
+            .indicator.active {
+                background: var(--accent-primary);
+                transform: scale(1.2);
+                box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
+            }
+
+            .indicator:hover {
+                transform: scale(1.1);
+                background: var(--accent-secondary);
+            }
+
+            .progress-system {
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-lg);
+            }
+
+            .progress-info {
+                display: flex;
+                justify-content: center;
+            }
+
+            .progress-counter {
+                font-size: var(--text-sm);
+                color: var(--text-primary);
+                background: var(--surface-secondary);
+                padding: var(--space-sm) var(--space-lg);
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .progress-track {
+                height: 6px;
+                background: var(--surface-secondary);
+                border-radius: 3px;
+                overflow: hidden;
+            }
+
+            .progress-fill {
+                height: 100%;
+                background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+                border-radius: 3px;
+                transition: width var(--duration-slow) var(--ease-smooth);
+                width: 20%;
+            }
+
+            .action-section {
+                display: flex;
+                justify-content: center;
+            }
+
+            .primary-action {
+                display: inline-flex;
+                align-items: center;
+                gap: var(--space-lg);
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+                color: white;
+                text-decoration: none;
+                padding: var(--space-xl) var(--space-3xl);
+                border-radius: 50px;
+                font-family: var(--font-display);
+                font-size: var(--text-lg);
+                font-weight: 600;
+                box-shadow: var(--shadow-md);
+                transition: all var(--duration-normal) var(--ease-spring);
+            }
+
+            .primary-action:hover {
+                transform: translateY(-4px);
+                box-shadow: var(--shadow-lg);
+            }
+
+            .primary-action svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            @media (max-width: 1024px) {
+                .content-layout {
+                    grid-template-columns: 1fr;
+                    gap: var(--space-3xl);
+                    text-align: center;
+                }
+
+                .profile-frame {
+                    width: 280px;
+                    height: 350px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .main-container {
+                    padding: var(--space-xl);
+                }
+
+                .top-nav {
+                    top: var(--space-xl);
+                    right: var(--space-xl);
+                }
+
+                .profile-frame {
+                    width: 240px;
+                    height: 300px;
+                }
+
+                .cards-system {
+                    padding: var(--space-2xl);
+                }
+
+                .cards-stack {
+                    height: 300px;
+                }
+
+                .nav-arrow {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .main-container {
+                    padding: var(--space-lg);
+                }
+
+                .profile-frame {
+                    width: 200px;
+                    height: 250px;
+                    padding: var(--space-lg);
+                }
+
+                .cards-system {
+                    padding: var(--space-lg);
+                }
+
+                .card-content {
+                    padding: var(--space-lg);
+                }
+
+                .cards-navigation {
+                    gap: var(--space-lg);
+                }
+            }
+        </style>
+
+        <script>
+            class TypewriterSystem {
+                constructor() {
+                    this.nameText = "Nanna!!";
+                    this.subtitleText = "Today we celebrate the incredible person you are, the love you share, and the joy you bring to our lives every single day.";
+                    this.init();
+                }
+
+                init() {
+                    setTimeout(() => {
+                        this.typewriteName();
+                    }, 1000);
+                }
+
+                typewriteName() {
+                    const nameElement = document.getElementById("nameDisplay");
+                    let index = 0;
+
+                    const type = () => {
+                        if (index < this.nameText.length) {
+                            nameElement.textContent += this.nameText.charAt(index);
+                            index++;
+                            setTimeout(type, 150);
+                        } else {
+                            setTimeout(() => {
+                                this.typewriteSubtitle();
+                            }, 800);
+                        }
+                    };
+
+                    type();
+                }
+
+                typewriteSubtitle() {
+                    const subtitleElement = document.getElementById("subtitleDisplay");
+                    let index = 0;
+
+                    const type = () => {
+                        if (index < this.subtitleText.length) {
+                            subtitleElement.textContent += this.subtitleText.charAt(index);
+                            index++;
+                            setTimeout(type, 30);
+                        }
+                    };
+
+                    type();
+                }
+            }
+
+            class CardsSystem {
+                constructor() {
+                    this.cards = document.querySelectorAll(".wish-card");
+                    this.indicators = document.querySelectorAll(".indicator");
+                    this.prevBtn = document.getElementById("prevCard");
+                    this.nextBtn = document.getElementById("nextCard");
+                    this.progressCounter = document.getElementById("progressCounter");
+                    this.progressFill = document.getElementById("progressFill");
+
+                    this.currentIndex = 0;
+                    this.totalCards = this.cards.length;
+                    this.isAnimating = false;
+
+                    this.init();
+                }
+
+                init() {
+                    this.updateCardPositions();
+                    this.updateUI();
+                    this.bindEvents();
+                }
+
+                bindEvents() {
+                    this.prevBtn.addEventListener("click", () => this.previousCard());
+                    this.nextBtn.addEventListener("click", () => this.nextCard());
+
+                    document.addEventListener("keydown", (e) => {
+                        if (e.key === "ArrowLeft") this.previousCard();
+                        if (e.key === "ArrowRight") this.nextCard();
+                    });
+
+                    this.indicators.forEach((indicator, index) => {
+                        indicator.addEventListener("click", () => this.goToCard(index));
+                    });
+                }
+
+                nextCard() {
+                    if (this.isAnimating) return;
+
+                    this.currentIndex = (this.currentIndex + 1) % this.totalCards;
+                    this.animateTransition();
+                }
+
+                previousCard() {
+                    if (this.isAnimating) return;
+
+                    this.currentIndex = (this.currentIndex - 1 + this.totalCards) % this.totalCards;
+                    this.animateTransition();
+                }
+
+                goToCard(index) {
+                    if (this.isAnimating || index === this.currentIndex) return;
+
+                    this.currentIndex = index;
+                    this.animateTransition();
+                }
+
+                animateTransition() {
+                    this.isAnimating = true;
+
+                    this.cards.forEach((card) => {
+                        card.style.transition = "all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+                    });
+
+                    this.updateCardPositions();
+                    this.updateUI();
+
+                    setTimeout(() => {
+                        this.isAnimating = false;
+                        this.cards.forEach((card) => {
+                            card.style.transition = "";
+                        });
+                    }, 800);
+                }
+
+                updateCardPositions() {
+                    this.cards.forEach((card, index) => {
+                        card.classList.remove("active", "behind-1", "behind-2", "behind-3", "behind-4");
+
+                        const relativePosition = (index - this.currentIndex + this.totalCards) % this.totalCards;
+
+                        switch (relativePosition) {
+                            case 0:
+                                card.classList.add("active");
+                                break;
+                            case 1:
+                            case this.totalCards - 1:
+                                card.classList.add("behind-1");
+                                break;
+                            case 2:
+                            case this.totalCards - 2:
+                                card.classList.add("behind-2");
+                                break;
+                            case 3:
+                            case this.totalCards - 3:
+                                card.classList.add("behind-3");
+                                break;
+                            default:
+                                card.classList.add("behind-4");
+                        }
+                    });
+                }
+
+                updateUI() {
+                    this.progressCounter.textContent = `${this.currentIndex + 1} of ${this.totalCards}`;
+
+                    const progressWidth = ((this.currentIndex + 1) / this.totalCards) * 100;
+                    this.progressFill.style.width = `${progressWidth}%`;
+
+                    this.indicators.forEach((indicator, index) => {
+                        indicator.classList.toggle("active", index === this.currentIndex);
+                    });
+                }
+            }
+
+            class ThemeSystem {
+                constructor() {
+                    this.currentTheme = localStorage.getItem("theme") || "dark";
+                    this.init();
+                }
+
+                init() {
+                    this.applyTheme(this.currentTheme);
+                }
+
+                applyTheme(theme) {
+                    document.body.setAttribute("data-theme", theme);
+                    localStorage.setItem("theme", theme);
+                    this.currentTheme = theme;
+                }
+
+                toggle() {
+                    const newTheme = this.currentTheme === "dark" ? "light" : "dark";
+                    this.applyTheme(newTheme);
+                }
+            }
+
+            class AudioSystem {
+                constructor() {
+                    this.audio = document.getElementById("birthdayAudio");
+                    this.isPlaying = false;
+                    this.init();
+                }
+
+                init() {
+                    this.audio.volume = 0.5;
                     this.updateIcon();
-                }).catch(e => {
-                    console.log('Audio play failed:', e);
-                });
+                }
+
+                toggle() {
+                    if (this.isPlaying) {
+                        this.pause();
+                    } else {
+                        this.play();
+                    }
+                }
+
+                play() {
+                    this.audio
+                        .play()
+                        .then(() => {
+                            this.isPlaying = true;
+                            this.updateIcon();
+                        })
+                        .catch((e) => {
+                            console.log("Audio play failed:", e);
+                        });
+                }
+
+                pause() {
+                    this.audio.pause();
+                    this.isPlaying = false;
+                    this.updateIcon();
+                }
+
+                updateIcon() {
+                    const audioBtn = document.querySelector(".audio-btn");
+                    audioBtn.classList.toggle("muted", !this.isPlaying);
+                }
             }
 
-            pause() {
-                this.audio.pause();
-                this.isPlaying = false;
-                this.updateIcon();
+            function toggleTheme() {
+                window.themeSystem.toggle();
             }
 
-            updateIcon() {
-                const audioBtn = document.querySelector('.audio-btn');
-                audioBtn.classList.toggle('muted', !this.isPlaying);
+            function toggleAudio() {
+                window.audioSystem.toggle();
             }
-        }
 
-        // ===== UTILITY FUNCTIONS =====
-        function toggleTheme() {
-            window.themeSystem.toggle();
-        }
+            document.addEventListener("DOMContentLoaded", () => {
+                window.typewriterSystem = new TypewriterSystem();
+                window.cardsSystem = new CardsSystem();
+                window.themeSystem = new ThemeSystem();
+                window.audioSystem = new AudioSystem();
 
-        function toggleAudio() {
-            window.audioSystem.toggle();
-        }
+                if (typeof lucide !== "undefined") {
+                    lucide.createIcons();
+                }
 
-        // ===== INITIALIZATION =====
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize systems
-            window.typewriterSystem = new TypewriterSystem();
-            window.cardsSystem = new CardsSystem();
-            window.themeSystem = new ThemeSystem();
-            window.audioSystem = new AudioSystem();
-            
-            // Initialize icons
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-            
-            console.log('Birthday celebration page loaded! 🎉');
-        });
-    </script>
-</body>
+                console.log("Birthday celebration page loaded! 🎉");
+            });
+        </script>
+    </body>
 </html>
